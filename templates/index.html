@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <title>Contador</title>
+</head>
+<body>
+    
+    <main class="container">
+        <h1 class="mt-5 mb-5">Contador</h1>
+
+        <div class="contador">
+            <h2>{{ session['contador'] }} veces</h2>
+        </div>
+
+        <a class="btn btn-danger btn-lg btn-block" href="/add/2">Add two visits!!</a>
+        <a class="btn btn-success btn-lg btn-block" href="/restart">restart</a>
+
+        <form action="/add" method="POST">
+            <div class="mt-3">
+                <label for="suma" class="form-label">Suma</label>
+                <input class="form-control" type="number" name="sumar" id="suma">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
